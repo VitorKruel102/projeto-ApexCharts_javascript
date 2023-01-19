@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico em Barras</title>
+    <script src="../apexcharts.min.js"></script>
+</head>
+<body>
+    <h3>Participantes no Passatempo</h3>
+    <div id="grafico"></div>
+
+    <script>
+        //Busca o elemento HTML onde o gráfico vai ser renderizado
+        let grafico_barra = document.getElementById('grafico')
+
+        // Definição das opções do gráfico
+        let options = {
+            chart: {
+                type: 'bar',
+                width: 700,
+                height: 500,
+            },
+            series: [
+                {
+                    name: 'Homens',
+                    data: [10, 20, 30, 40, 30, 20, 10]
+                },
+                {
+                    name: 'Mulheres',
+                    data: [20, 30, 40, 50, 40, 30, 20]
+                }
+            ],
+            labels: [
+                '2°Feira',
+                '3°Feira',
+                '4°Feira',
+                '5°Feira',
+                '6°Feira',
+                'Sábado',
+                'Domingo',
+            ],
+            plotOptions: {
+                bar: {
+                    horizontal : false,
+                    dataLabels: {
+                        position: 'top',
+                    }
+                }
+            },
+            yaxis: {
+                min: 0,
+                max: 100
+            },
+            grid: {
+                show: true,
+                xaxis: {
+                    lines: {
+                        show: true
+                    }
+                }
+            },
+            colors: ['#4466FF', '#FF6688']
+        }
+
+        //Criação do objeto a apartir da biblioteca ApexCharts
+        let chart = new ApexCharts(grafico_barra, options)
+
+        // Renderização do gráfico na página
+        chart.render()
+</script>
+</body>
+</html>

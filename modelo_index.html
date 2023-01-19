@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico em Barras</title>
+</head>
+<body>
+    <h3>Participantes no Passatempo</h3>
+    <div id="grafico"></div>
+
+    <script>
+        //Busca o elemento HTML onde o gráfico vai ser renderizado
+        let grafico_barra = document.getElementById('grafico')
+
+        // Definição das opções do gráfico
+        let options = {
+
+        }
+
+        //Criação do objeto a apartir da biblioteca ApexCharts
+        let chart = new ApexCharts(grafico_barra, options)
+
+        // Renderização do gráfico na página
+        chart.render()
+</script>
+</body>
+</html>
